@@ -1,0 +1,25 @@
+/******************************************
+  Variables
+******************************************/
+
+/************** Font **************/
+$font-roboto:                         'Roboto', sans-serif;
+$font-montserrat:                     'Montserrat', sans-serif;
+
+$typeface-primary:                    $font-roboto;
+
+/* ************************************ */
+
+/************** Theme Color **************/
+$color-grey-main:                    #6E6E6E;
+$color-grey-dark:                    #303030;
+$color-grey-dark-light:              #828282;
+$color-grey-dark-lighter:            #C4C4C4;
+$color-blue-light:                   #04A2F3;
+$color-blue-dark:                    #017FDE;
+
+$color-main-text:                      $color-grey-main;
+$color-placeholder:                    $color-grey-dark-lighter;
+$color-footer-background:              $color-grey-dark;
+
+/* ************************************ */

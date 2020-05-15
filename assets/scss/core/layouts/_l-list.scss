@@ -1,0 +1,35 @@
+/******************************************
+  Some tips for creating layouts :
+  - Add `l` prefix before the name of layouts
+  - Or Just copy paste this structure of styling code into your new layouts styling file
+  - Dont forget to register your layouts into `_layouts.scss`
+******************************************/
+/** This Place For Layouts List **/
+.#{$namespace} {
+  & .l-list {
+    & .list {
+      &__head {
+        margin-bottom: 24px;
+      }
+
+      &__action {
+        position: relative;
+        margin: 0;
+        padding: 0;
+
+        @include clearfix;
+
+        & li {
+          float: left;
+          margin-right: 16px;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ************************************ */

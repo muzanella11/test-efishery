@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
+<head>
+   <script type="text/javascript">
+      if (top.location !== window.location) {
+         let enLogStyle = [
+            'font-size: 8rem',
+            'text-align: center',
+            'display: block',
+            'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)'
+         ].join(';');
+
+         console.log('%cMau Kemana ?', enLogStyle);
+         console.log('%cMau Ngapain ?', enLogStyle);
+         console.log('%c:)', enLogStyle);
+         window.location = '/maukemana'
+      }
+   </script>
+   {{ HEAD }}
+</head>
+<body class="enem-themes" {{ BODY_ATTRS }}>
+   {{ APP }}
+</body>
+</html>
