@@ -3,7 +3,9 @@
     :headers="headers"
     :items="entries"
     :items-per-page="limit"
-    class="elevation-1"
+    :loading="isLoading"
+    :loading-text="loadingText"
+    class="c-table elevation-1"
   />
 </template>
 
