@@ -10,17 +10,10 @@ export default () => ({
   isOnline: true,
   isLoading: {
     example: false,
-    form: false,
-    list: false,
-    detail: false,
-    family: false,
-    medicineUsage: false
+    list: false
   },
   dialog: {
-    createPatients: false,
-    detailPatients: false,
-    updatePatients: false,
-    deletePatients: false
+    example: false
   },
   isTimeout: {
     example: false
