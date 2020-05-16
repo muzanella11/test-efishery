@@ -14,7 +14,7 @@
           >
             <v-text-field
               solo
-              label="Search"
+              label="Search by ID or Commodity"
               prepend-inner-icon="mdi-magnify"
             />
           </v-col>

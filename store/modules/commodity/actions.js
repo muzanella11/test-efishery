@@ -9,9 +9,12 @@ const fetchSteinStore = new SteinStore(
 export default {
   [COMMODITYTYPE.FETCH_COMMODITY_LISTS] ({ commit }, payload) {
     return new Promise((resolve, reject) => {
+      commit(COMMODITYTYPE.SET_STATE, { accessor: 'entries', value: [] })
       commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.list', value: true })
 
-      fetchSteinStore.read('list?limit=&offset=', {
+      fetchSteinStore.read('list', {
+        limit: payload.limit,
+        offset: payload.page - 1,
         search: {}
       })
         .then(response => {

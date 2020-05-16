@@ -6,7 +6,7 @@
     :loading="isLoading"
     :loading-text="loadingText"
     :items-per-page="filters.limit"
-    :page.sync="filters.page"
+    hide-default-footer
     class="c-table elevation-1"
     :class="[isMobile ? 'mobile' : '']"
   >
@@ -29,6 +29,7 @@
           :key="index"
         >
           <td>{{ item.uuid || 'null' }}</td>
+          <td>{{ item.komoditas || 'null' }}</td>
           <td>{{ item.area_provinsi || 'null' }}</td>
           <td>{{ item.area_kota || 'null' }}</td>
           <td>{{ item.size || 'null' }}</td>
@@ -60,6 +61,15 @@
           </td>
         </tr>
       </tbody>
+    </template>
+
+    <template v-slot:footer>
+      <efishery-table-pagination
+        :value="pagination"
+        :total-data="entries.length"
+        :is-loading="isLoading"
+        @input="onPagination"
+      />
     </template>
   </v-data-table>
 </template>

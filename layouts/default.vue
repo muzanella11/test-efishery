@@ -52,6 +52,7 @@
 export default {
   data () {
     return {
+      name: 'Default',
       clipped: false,
       drawer: false,
       fixed: false,
