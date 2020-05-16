@@ -1,6 +1,7 @@
 import {
   mapActions,
-  mapState
+  mapState,
+  mapMutations
 } from 'vuex'
 import EfisheryTable from '~/components/tables/template'
 import EfisheryTableActionHover from '~/components/table-action-hover/template'
@@ -22,10 +23,6 @@ export default {
   data () {
     return {
       isMobile: false,
-      filters: {
-        page: 1,
-        limit: 5
-      },
       loadingText: 'loading...',
       headers: [
         {
@@ -47,7 +44,8 @@ export default {
   computed: {
     ...mapState({
       isLoading: state => state.isLoading.list,
-      entries: state => state.commodity.entries
+      entries: state => state.commodity.entries,
+      filters: state => state.commodity.filters
     }),
 
     pagination () {
@@ -74,6 +72,10 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setStateCommodity: CommodityTypes.SET_STATE
+    }),
+
     ...mapActions({
       fetchEntries: CommodityTypes.FETCH_COMMODITY_LISTS
     }),
@@ -95,10 +97,12 @@ export default {
     },
 
     onPagination (val) {
-      this.filters = Object.assign(this.filters, {
+      const value = Object.assign(this.filters, {
         page: val.page,
         limit: val.limit
       })
+
+      this.setStateCommodity({ accessor: 'filters', value })
     },
 
     prevAction () {

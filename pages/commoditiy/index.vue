@@ -13,9 +13,11 @@
             xs="12"
           >
             <v-text-field
+              :value="filters.key"
               solo
-              label="Search by ID or Commodity"
+              label="Search ID"
               prepend-inner-icon="mdi-magnify"
+              @input="setInputKey($event)"
             />
           </v-col>
 
