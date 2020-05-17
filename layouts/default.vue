@@ -27,7 +27,9 @@
     <v-app-bar
       :clipped-left="clipped"
       fixed
+      color="#28b796f2"
       app
+      dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
@@ -43,26 +45,35 @@
         </v-row>
       </v-container>
     </v-content>
+
+    <efishery-snackbar />
   </v-app>
 </template>
 
 <script>
+import EfisherySnackbar from '~/components/snackbar/template'
+
 export default {
+  components: {
+    EfisherySnackbar
+  },
+
   data () {
     return {
+      name: 'Default',
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-poll-box-outline',
+          title: 'Commodity',
+          to: '/commodity'
         }
       ],
       miniVariant: false,

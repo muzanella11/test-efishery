@@ -7,10 +7,37 @@
 /** This Place For Block Table **/
 .#{$namespace} {
   & .c-table {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    & table {
+      position: relative;
+    }
 
-    & thead tr:last-child th {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    & .table {
+      //
+    }
+
+    & tbody {
+      & tr {
+        position: relative;
+
+        &:hover {
+          & .c-table-action-hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    & .v-data-table {
+      &__progress {
+        & .v-progress-linear {
+          &__background {
+            &.primary {
+              background-color: $color-primary !important;
+              border-color: $color-primary !important;
+            }
+          }
+        }
+      }
     }
   }
 }
