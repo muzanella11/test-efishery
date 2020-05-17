@@ -63,4 +63,4 @@ $ yarn start
 
 ## Explanation Design and Architecture
 
-For detailed explanation about UI/UX and Core styling Architecture, check out [Explanation Design Architecture]()
+For detailed explanation about UI/UX and Core styling Architecture, check out [Explanation Design Architecture](https://github.com/muzanella11/test-efishery/tree/master/assets/scss)
