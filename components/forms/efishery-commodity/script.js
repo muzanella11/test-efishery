@@ -10,6 +10,7 @@ import * as RootTypes from '~/store/types'
 import EfisheryCommodity from '~/components/lists/efishery-commodity/template'
 import EfisherySelectProvince from '~/components/inputs/selects/provinces/template'
 import EfisherySelectCommoditySize from '~/components/inputs/selects/commodity-size/template'
+import EfisheryDialogDelete from '~/components/dialogs/efishery-delete-commodity/template'
 import MixinsSnackbar from '~/mixins/snackbar'
 
 export default {
@@ -20,7 +21,8 @@ export default {
   components: {
     EfisheryCommodity,
     EfisherySelectProvince,
-    EfisherySelectCommoditySize
+    EfisherySelectCommoditySize,
+    EfisheryDialogDelete
   },
 
   data () {
@@ -127,6 +129,18 @@ export default {
         size: data.size,
         komoditas: data.komoditas,
         price: data.price
+      })
+
+      this.setStateCommodity({
+        accessor: 'dataDialog',
+        value: {
+          uuid: data.uuid,
+          area_provinsi: data.area_provinsi,
+          area_kota: data.area_kota,
+          size: data.size,
+          komoditas: data.komoditas,
+          price: data.price
+        }
       })
     },
 
@@ -236,7 +250,7 @@ export default {
     },
 
     actionDelete () {
-      console.info('here delete')
+      this.setStateCommodity({ accessor: 'dialogDelete', value: true })
     }
   }
 }

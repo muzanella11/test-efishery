@@ -155,6 +155,7 @@
                 <v-btn
                   color="primary"
                   :disabled="disabled"
+                  :loading="isLoading"
                   @click="actionSubmit"
                 >
                   Submit
@@ -190,6 +191,7 @@
               >
                 <v-btn
                   color="primary"
+                  :loading="isLoading"
                   @click="actionUpdate"
                 >
                   Ubah
@@ -227,6 +229,7 @@
                 <v-btn
                   color="primary"
                   :disabled="disabled"
+                  :loading="isLoading"
                   @click="actionSubmitUpdate"
                 >
                   Update
@@ -237,6 +240,10 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <efishery-dialog-delete
+      ref="dialog-commodity"
+    />
   </div>
 </template>
 
