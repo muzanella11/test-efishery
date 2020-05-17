@@ -29,7 +29,6 @@ export default {
 
       fetchSteinStore.read('list', params)
         .then(response => {
-          console.log('here response : ', response)
           commit(COMMODITYTYPE.SET_STATE, { accessor: 'entries', value: response })
           commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.list', value: false })
           resolve(response)
@@ -37,6 +36,41 @@ export default {
         .catch(error => {
           commit(COMMODITYTYPE.SET_STATE, { accessor: 'entries', value: [] })
           commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.list', value: false })
+          reject(error)
+        })
+    })
+  },
+
+  [COMMODITYTYPE.FETCH_COMMODITY_SIZE] ({ commit }) {
+    return new Promise((resolve, reject) => {
+      commit(COMMODITYTYPE.SET_STATE, { accessor: 'commoditySize', value: [] })
+      commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: true })
+
+      fetchSteinStore.read('option_size')
+        .then(response => {
+          commit(COMMODITYTYPE.SET_STATE, { accessor: 'commoditySize', value: response })
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          resolve(response)
+        })
+        .catch(error => {
+          commit(COMMODITYTYPE.SET_STATE, { accessor: 'commoditySize', value: [] })
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          reject(error)
+        })
+    })
+  },
+
+  [COMMODITYTYPE.CREATE_COMMODITY] ({ commit }, payload) {
+    return new Promise((resolve, reject) => {
+      commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: true })
+
+      fetchSteinStore.append('list', payload)
+        .then(response => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          resolve(response)
+        })
+        .catch(error => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
           reject(error)
         })
     })

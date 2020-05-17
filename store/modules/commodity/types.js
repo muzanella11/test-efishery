@@ -7,6 +7,8 @@ export const SET_STATE = `${NAMESPACE}_SET_STATE`
 
 /** ************************ For Actions ****************************************/
 export const FETCH_COMMODITY_LISTS = `${NAMESPACE}_FETCH_COMMODITY_LISTS`
+export const FETCH_COMMODITY_SIZE = `${NAMESPACE}_FETCH_COMMODITY_SIZE`
+export const CREATE_COMMODITY = `${NAMESPACE}_CREATE_COMMODITY`
 /*******************************************************************************/
 
 /** ************************ For Getters ****************************************/

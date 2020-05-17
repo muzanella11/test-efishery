@@ -31,6 +31,10 @@ export default {
       if (val.length > 3 || val.length === 0) {
         this.setStateCommodity({ accessor: 'filters.key', value: val })
       }
+    },
+
+    actionCreate () {
+      window.location.href = '/commodity/create'
     }
   }
 }

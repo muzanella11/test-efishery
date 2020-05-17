@@ -6,5 +6,6 @@ export default () => ({
     key: '',
     page: 1,
     limit: 5
-  }
+  },
+  commoditySize: []
 })

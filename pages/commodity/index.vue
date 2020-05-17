@@ -37,6 +37,7 @@
           >
             <v-btn
               color="primary"
+              @click="actionCreate"
             >
               + Tambah
             </v-btn>

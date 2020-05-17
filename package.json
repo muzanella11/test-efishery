@@ -28,6 +28,7 @@
     "query-string": "^6.12.1",
     "stein-js-client": "^0.0.2",
     "stylelint-config-standard": "^20.0.0",
+    "uuid": "^8.0.0",
     "vuex": "^3.3.0"
   },
   "devDependencies": {

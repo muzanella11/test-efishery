@@ -45,11 +45,19 @@
         </v-row>
       </v-container>
     </v-content>
+
+    <efishery-snackbar />
   </v-app>
 </template>
 
 <script>
+import EfisherySnackbar from '~/components/snackbar/template'
+
 export default {
+  components: {
+    EfisherySnackbar
+  },
+
   data () {
     return {
       name: 'Default',

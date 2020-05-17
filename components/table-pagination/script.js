@@ -63,10 +63,7 @@ export default {
       deep: true,
       handler (val) {
         if (val) {
-          this.entry = Object.assign(this.entry, {
-            limit: val.limit,
-            page: val.page
-          })
+          this.entry = val
         }
       }
     },

@@ -10,12 +10,19 @@ export default () => ({
   isOnline: true,
   isLoading: {
     example: false,
-    list: false
+    list: false,
+    form: false
   },
   dialog: {
     example: false
   },
   isTimeout: {
     example: false
+  },
+  provinces: [],
+  snackbar: {
+    isShown: false,
+    messages: '',
+    color: 'error'
   }
 })
