@@ -6,7 +6,7 @@
 
 - [Quick start](#quick-start)
 - [Build Setup](#status)
-- [Explanation about UI/UX of the interface and Core styling architechture](#explanation-design-and-architechture)
+- [Explanation about UI/UX of the interface and Core styling architecture](#explanation-design-and-architecture)
 
 ## Quick start
 
@@ -61,6 +61,6 @@ $ yarn start
 ##########################
 ```
 
-## Explanation Design and Architechture
+## Explanation Design and Architecture
 
-For detailed explanation about UI/UX and Core styling Architechture, check out [Explanation Design Architechture]()
+For detailed explanation about UI/UX and Core styling Architecture, check out [Explanation Design Architecture]()
