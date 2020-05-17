@@ -91,6 +91,7 @@ export default {
     ...mapActions({
       createCommodity: CommodityTypes.CREATE_COMMODITY,
       updateCommodity: CommodityTypes.UPDATE_COMMODITY,
+      deleteCommodity: CommodityTypes.DELETE_COMMODITY,
       fetchDetail: CommodityTypes.FETCH_COMMODITY_DETAIL
     }),
 
@@ -108,7 +109,7 @@ export default {
             this.mappingEntry(res)
           })
           .catch(() => {
-            this.openSnackbar('Data tidak ditemukan :(', 8000)
+            this.openSnackbar('Data tidak ditemukan :(', 'error', 8000)
 
             window.location.href = '/commodity'
           })
@@ -203,6 +204,18 @@ export default {
         })
         .catch(() => {
           this.openSnackbar('Gagal mengubah data!', 'error')
+        })
+    },
+
+    delete () {
+      this.deleteCommodity(this.entry.id)
+        .then(() => {
+          this.openSnackbar('Berhasil menghapus data!')
+
+          window.location.href = '/commodity'
+        })
+        .catch(() => {
+          this.openSnackbar('Gagal menghapus data!', 'error')
         })
     },
 

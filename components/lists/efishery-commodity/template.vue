@@ -80,6 +80,10 @@
         :is-loading="isLoading"
         @input="onPagination"
       />
+
+      <efishery-dialog-delete
+        ref="dialog-commodity"
+      />
     </template>
   </v-data-table>
 </template>

@@ -11,6 +11,7 @@ export const FETCH_COMMODITY_DETAIL = `${NAMESPACE}_FETCH_COMMODITY_DETAIL`
 export const FETCH_COMMODITY_SIZE = `${NAMESPACE}_FETCH_COMMODITY_SIZE`
 export const CREATE_COMMODITY = `${NAMESPACE}_CREATE_COMMODITY`
 export const UPDATE_COMMODITY = `${NAMESPACE}_UPDATE_COMMODITY`
+export const DELETE_COMMODITY = `${NAMESPACE}_DELETE_COMMODITY`
 /*******************************************************************************/
 
 /** ************************ For Getters ****************************************/

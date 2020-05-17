@@ -6,6 +6,7 @@ import {
 import EfisheryTable from '~/components/tables/template'
 import EfisheryTableActionHover from '~/components/table-action-hover/template'
 import EfisheryTablePagination from '~/components/table-pagination/template'
+import EfisheryDialogDelete from '~/components/dialogs/efishery-delete-commodity/template'
 import * as CommodityTypes from '~/store/modules/commodity/types'
 import MixinsDateTime from '~/mixins/date-time'
 
@@ -13,7 +14,8 @@ export default {
   components: {
     EfisheryTable,
     EfisheryTableActionHover,
-    EfisheryTablePagination
+    EfisheryTablePagination,
+    EfisheryDialogDelete
   },
 
   mixins: [

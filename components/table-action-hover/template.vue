@@ -22,7 +22,10 @@
         </a>
       </li>
       <li>
-        <a href="javascript:;">
+        <a
+          href="javascript:;"
+          @click="goToDelete(entry)"
+        >
           <v-icon>
             mdi-trash-can-outline
           </v-icon>

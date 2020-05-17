@@ -22,10 +22,18 @@ export default {
     })
   },
 
+  mounted () {
+    this.init()
+  },
+
   methods: {
     ...mapMutations({
       setStateCommodity: CommodityTypes.SET_STATE
     }),
+
+    init () {
+      //
+    },
 
     setInputKey (val) {
       if (val.length > 3 || val.length === 0) {

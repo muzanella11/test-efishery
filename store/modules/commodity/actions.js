@@ -119,5 +119,27 @@ export default {
           reject(error)
         })
     })
+  },
+
+  [COMMODITYTYPE.DELETE_COMMODITY] ({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: true })
+
+      const params = {
+        search: {
+          uuid: id
+        }
+      }
+
+      fetchSteinStore.delete('list', params)
+        .then(response => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          resolve(response)
+        })
+        .catch(error => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          reject(error)
+        })
+    })
   }
 }
