@@ -111,6 +111,10 @@ export default {
 
     nextAction () {
       this.pagination.page--
+    },
+
+    goToDetail (item) {
+      window.location.href = `/commodity/${item.uuid}`
     }
   }
 }

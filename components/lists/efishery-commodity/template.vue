@@ -28,7 +28,14 @@
           v-for="(item, index) in items"
           :key="index"
         >
-          <td>{{ item.uuid || 'null' }}</td>
+          <td>
+            <a
+              href="javascript:;"
+              @click="goToDetail(item)"
+            >
+              {{ item.uuid || 'null' }}
+            </a>
+          </td>
           <td>{{ item.komoditas || 'null' }}</td>
           <td>{{ item.area_provinsi || 'null' }}</td>
           <td>{{ item.area_kota || 'null' }}</td>
@@ -54,6 +61,7 @@
                 :key="indexHeaderMobile"
                 class="flex-item"
                 :data-label="itemHeaderMobile.text"
+                @click="goToDetail(item)"
               >
                 {{ itemHeaderMobile.value === 'tgl_parsed' ? formattingDate(item[itemHeaderMobile.value]) : item[itemHeaderMobile.value] || 'null' }}
               </li>

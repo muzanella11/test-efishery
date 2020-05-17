@@ -38,10 +38,14 @@ export default {
       setRootState: ROOTTYPES.SET_STATE
     }),
 
-    openSnackbar (messages, typeColor) {
+    openSnackbar (messages, typeColor, timeout) {
       this.setRootState({ accessor: 'snackbar.messages', value: messages })
       this.setRootState({ accessor: 'snackbar.color', value: typeColor })
       this.setRootState({ accessor: 'snackbar.isShown', value: true })
+
+      if (timeout) {
+        this.timeout = timeout
+      }
 
       setTimeout(() => {
         this.setRootState({ accessor: 'snackbar.isShown', value: false })

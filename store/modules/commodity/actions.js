@@ -41,6 +41,28 @@ export default {
     })
   },
 
+  [COMMODITYTYPE.FETCH_COMMODITY_DETAIL] ({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: true })
+
+      const params = {
+        search: {
+          uuid: id
+        }
+      }
+
+      fetchSteinStore.read('list', params)
+        .then(response => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          resolve(response)
+        })
+        .catch(error => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          reject(error)
+        })
+    })
+  },
+
   [COMMODITYTYPE.FETCH_COMMODITY_SIZE] ({ commit }) {
     return new Promise((resolve, reject) => {
       commit(COMMODITYTYPE.SET_STATE, { accessor: 'commoditySize', value: [] })

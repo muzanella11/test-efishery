@@ -2,14 +2,20 @@
   <div class="c-table-action-hover table__action-hover">
     <ul class="action-hover">
       <li>
-        <a href="javascript:;">
+        <a
+          href="javascript:;"
+          @click="goToDetail(item)"
+        >
           <v-icon>
             mdi-eye-outline
           </v-icon>
         </a>
       </li>
       <li>
-        <a href="javascript:;">
+        <a
+          href="javascript:;"
+          @click="goToUpdate(item)"
+        >
           <v-icon>
             mdi-square-edit-outline
           </v-icon>
