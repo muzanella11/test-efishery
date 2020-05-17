@@ -96,5 +96,28 @@ export default {
           reject(error)
         })
     })
+  },
+
+  [COMMODITYTYPE.UPDATE_COMMODITY] ({ commit }, payload) {
+    return new Promise((resolve, reject) => {
+      commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: true })
+
+      const params = {
+        search: {
+          uuid: payload.id
+        },
+        set: payload.data
+      }
+
+      fetchSteinStore.edit('list', params)
+        .then(response => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          resolve(response)
+        })
+        .catch(error => {
+          commit(ROOTTYPES.SET_STATE, { accessor: 'isLoading.form', value: false })
+          reject(error)
+        })
+    })
   }
 }

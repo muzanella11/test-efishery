@@ -43,7 +43,9 @@
           <td>{{ item.price || 'null' }}</td>
           <td>{{ formattingDate(item.tgl_parsed) }}</td>
 
-          <efishery-table-action-hover />
+          <efishery-table-action-hover
+            :entry="item"
+          />
         </tr>
       </tbody>
 

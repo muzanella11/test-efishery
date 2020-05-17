@@ -90,6 +90,7 @@ export default {
   methods: {
     ...mapActions({
       createCommodity: CommodityTypes.CREATE_COMMODITY,
+      updateCommodity: CommodityTypes.UPDATE_COMMODITY,
       fetchDetail: CommodityTypes.FETCH_COMMODITY_DETAIL
     }),
 
@@ -181,6 +182,30 @@ export default {
         })
     },
 
+    update () {
+      const data = {
+        id: this.entry.id,
+        data: {
+          uuid: this.entry.id,
+          komoditas: this.entry.komoditas,
+          area_provinsi: this.entry.administrative.province,
+          area_kota: this.entry.administrative.city,
+          size: this.entry.size,
+          price: this.entry.price
+        }
+      }
+
+      this.updateCommodity(data)
+        .then(() => {
+          this.openSnackbar('Berhasil mengubah data!')
+
+          window.location.href = '/commodity'
+        })
+        .catch(() => {
+          this.openSnackbar('Gagal mengubah data!', 'error')
+        })
+    },
+
     actionCancel () {
       window.location.href = '/commodity'
     },
@@ -194,7 +219,7 @@ export default {
     },
 
     actionSubmitUpdate () {
-      this.submit()
+      this.update()
     },
 
     actionDelete () {

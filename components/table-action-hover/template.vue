@@ -4,7 +4,7 @@
       <li>
         <a
           href="javascript:;"
-          @click="goToDetail(item)"
+          @click="goToDetail(entry)"
         >
           <v-icon>
             mdi-eye-outline
@@ -14,7 +14,7 @@
       <li>
         <a
           href="javascript:;"
-          @click="goToUpdate(item)"
+          @click="goToUpdate(entry)"
         >
           <v-icon>
             mdi-square-edit-outline
